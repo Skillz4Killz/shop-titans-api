@@ -7,58 +7,60 @@ type Query {
 }
 
 type Blueprint {
-    Name: String!
-    Type: String!
-    unlockPrerequisite: String!
-    "Research Scrolls": String!
-    Tier: Int!
-    Value: Int!
-    "Crafting Time (seconds)": Int!
-    "Crafting Time (formatted)": String!
-    # "Value / Crafting Time": 3.33,
-    "Merchant XP": Int!
-    "Worker XP": Int!
-    "Required Worker": String!
-    "Worker Level": Int!
-    "Required Worker__1": String!
-    "Worker Level__1": String!
-    iron: 5,
-    wood: "",
-    leather: "",
-    herbs: "",
-    steel: "",
-    ironwood: "",
-    fabric: "",
-    oil: "",
-    Component: "---",
-    "Component Quality": String!
-    "Amount Needed": String!
-    Component__1: "---",
-    "Component Quality__1": String!
-    "Amount Needed__1": String!
-    ATK: 16,
-    DEF: "",
-    HP: "",
-    "Crafting Upgrade 1": String!
-    "Crafts Needed": 7,
-    "Crafting Upgrade 2": String!
-    "Crafts Needed__1": 18,
-    "Crafting Upgrade 3": String!
-    "Crafts Needed__2": 32,
-    "Crafting Upgrade 4": String!
-    "Crafts Needed__3": 50,
-    "Crafting Upgrade 5": String!
-    "Crafts Needed__4": 80,
-    "Ascension Upgrade 1": String!
-    "Shards Needed": 5,
-    "Ascension Upgrade 2": String!
-    "Shards Needed__1": 5,
-    "Ascension Upgrade 3": String!
-    "Shards Needed__2": Int!
-    "Discount Energy": Int!
-    "Surcharge Energy": Int!
-    "Suggest Energy": Int!
-    "Speed Up Energy": Int!
+	name: String!
+	type: String!
+	unlockPrerequisite: String!
+	researchScrolls: String!
+	tier: Int!
+	value: Int!
+	craftTime: BlueprintTime
+	# netValue: 3.33,
+	merchantXP: Int!
+	workerXP: Int!
+	workers: [BlueprintWorker!]!
+	iron: Int!
+	wood: Int!
+	leather: Int!
+	herbs: Int!
+	steel: Int!
+	ironwood: Int!
+	fabric: Int!
+	oil: Int!
+	components: [BlueprintComponent!]!
+	attack: Int!
+	defense: Int!
+	hp: Int!
+	crafting: [BlueprintCrafting!]!
+	ascension: [BlueprintCrafting!]!
+	energy: BlueprintEnergy
+}
+
+type BlueprintEnergy {
+	discount: Int!
+	surcharge: Int!
+	suggest: Int!
+	speedUp: Int!
+}
+
+type BlueprintTime {
+	seconds: Int!
+	formatted: String!
+}
+
+type BlueprintWorker {
+	name: String!
+	level: Int!
+}
+
+type BlueprintComponent {
+	name: String!
+	quality: String!
+	amount: Int!
+}
+
+type BlueprintCrafting {
+	reward: String!
+	amount: Int!
 }
 
 type Champion {
@@ -106,7 +108,7 @@ type Hero {
 	class: String!
 	subclass: String!
 	prerequisite: String!
-	stats: [HeroStat!]!
+	stats: HeroStat
 	criticalHit: HeroCritical
 	cost: HeroCost
 	threatRating: Int!
@@ -116,8 +118,10 @@ type Hero {
 }
 
 type HeroStat {
-	name: String!
-	amount: Int | String!
+	attack: Int!
+	health: Int!
+	defense: Int!
+	evasion: String!
 }
 
 type HeroCritical {

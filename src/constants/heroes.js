@@ -3,12 +3,12 @@ module.exports = [
     class: "Fighter",
     subclass: "Soldier",
 		prerequisite: "---",
-		stats: [
-			{ name: 'attack', amount: 10 },
-			{ name: 'health', amount: 30 },
-			{ name: 'defense', amount: 15 },
-			{ name: 'evasion', amount: "0%" },
-		],
+		stats: {
+			attack: 10,
+			health: 30,
+			defense: 15,
+			evasion: "0%"
+		},
 		criticalHit: {
 			chance: "5%",
 			damage: "2x",
@@ -33,12 +33,12 @@ module.exports = [
     class: "Fighter",
     subclass: "Barbarian",
 		prerequisite: "Merchant Lv. 10",
-		stats: [
-			{ name: 'attack', amount: 12 },
-			{ name: 'health', amount: 35 },
-			{ name: 'defense', amount: 10 },
-			{ name: 'evasion', amount: "0%" },
-		],
+		stats: {
+			attack: 12,
+			health: 35,
+			defense: 10,
+			evasion: "0%"
+		},
 		criticalHit: {
 			chance: "5%",
 			damage: "2x",
@@ -63,12 +63,12 @@ module.exports = [
     class: "Fighter",
     subclass: "Knight",
 		prerequisite: "Merchant Lv. 20",
-		stats: [
-			{ name: 'attack', amount: 10 },
-			{ name: 'health', amount: 42 },
-			{ name: 'defense', amount: 25 },
-			{ name: 'evasion', amount: "0%" },
-		],
+		stats: {
+			attack: 10,
+			health: 42,
+			defense: 25,
+			evasion: "0%"
+		},
 		criticalHit: {
 			chance: "5%",
 			damage: "2x",
@@ -93,12 +93,12 @@ module.exports = [
     class: "Fighter",
     subclass: "Ranger",
 		prerequisite: "Merchant Lv. 20",
-		stats: [
-			{ name: 'attack', amount: 15 },
-			{ name: 'health', amount: 33 },
-			{ name: 'defense', amount: 20 },
-			{ name: 'evasion', amount: "20%" },
-		],
+		stats: {
+			attack: 15,
+			health: 33,
+			defense: 20,
+			evasion: "20%"
+		},
 		criticalHit: {
 			chance: "5%",
 			damage: "2x",
@@ -123,12 +123,12 @@ module.exports = [
     class: "Fighter",
     subclass: "Samurai",
 		prerequisite: "Merchant Lv. 45",
-		stats: [
-			{ name: 'attack', amount: 20 },
-			{ name: 'health', amount: 40 },
-			{ name: 'defense', amount: 25 },
-			{ name: 'evasion', amount: "10%" },
-		],
+		stats: {
+			attack: 20,
+			health: 40,
+			defense: 25,
+			evasion: "10%"
+		},
 		criticalHit: {
 			chance: "5%",
 			damage: "2x",
@@ -153,12 +153,12 @@ module.exports = [
     class: "Rogue",
     subclass: "Thief",
 		prerequisite: "---",
-		stats: [
-			{ name: 'attack', amount: 10 },
-			{ name: 'health', amount: 22 },
-			{ name: 'defense', amount: 10 },
-			{ name: 'evasion', amount: "30%" },
-		],
+		stats: {
+			attack: 10,
+			health: 22,
+			defense: 10,
+			evasion: "30%"
+		},
 		criticalHit: {
 			chance: "20%",
 			damage: "2x",
@@ -183,12 +183,12 @@ module.exports = [
     class: "Rogue",
     subclass: "Monk",
 		prerequisite: "Merchant Lv. 15",
-		stats: [
-			{ name: 'attack', amount: 10 },
-			{ name: 'health', amount: 23 },
-			{ name: 'defense', amount: 10 },
-			{ name: 'evasion', amount: "30%" },
-		],
+		stats: {
+			attack: 10,
+			health: 23,
+			defense: 10,
+			evasion: "30%"
+		},
 		criticalHit: {
 			chance: "20%",
 			damage: "3x",
@@ -213,12 +213,12 @@ module.exports = [
     class: "Rogue",
     subclass: "Musketeer",
 		prerequisite: "Merchant Lv. 25",
-		stats: [
-			{ name: 'attack', amount: 15 },
-			{ name: 'health', amount: 23 },
-			{ name: 'defense', amount: 12 },
-			{ name: 'evasion', amount: "30%" },
-		],
+		stats: {
+			attack: 15,
+			health: 23,
+			defense: 12,
+			evasion: "30%"
+		},
 		criticalHit: {
 			chance: "30%",
 			damage: "2x",
@@ -243,12 +243,12 @@ module.exports = [
     class: "Rogue",
     subclass: "Wanderer",
 		prerequisite: "Merchant Lv. 35",
-		stats: [
-			{ name: 'attack', amount: 15 },
-			{ name: 'health', amount: 25 },
-			{ name: 'defense', amount: 12 },
-			{ name: 'evasion', amount: "40%" },
-		],
+		stats: {
+			attack: 15,
+			health: 25,
+			defense: 12,
+			evasion: "40%"
+		},
 		criticalHit: {
 			chance: "20%",
 			damage: "2x",
@@ -273,12 +273,12 @@ module.exports = [
     class: "Rogue",
     subclass: "Ninja",
 		prerequisite: "Merchant Lv. 50",
-		stats: [
-			{ name: 'attack', amount: 20 },
-			{ name: 'health', amount: 30 },
-			{ name: 'defense', amount: 15 },
-			{ name: 'evasion', amount: "30-50%" },
-		],
+		stats: {
+			attack: 20,
+			health: 30,
+			defense: 15,
+			evasion: "30-50%"
+		},
 		criticalHit: {
 			chance: "20%(+20%)",
 			damage: "3x",
@@ -303,12 +303,12 @@ module.exports = [
     class: "Spellcaster",
     subclass: "Mage",
 		prerequisite: "---",
-		stats: [
-			{ name: 'attack', amount: 24 },
-			{ name: 'health', amount: 20 },
-			{ name: 'defense', amount: 10 },
-			{ name: 'evasion', amount: "0%" },
-		],
+		stats: {
+			attack: 24,
+			health: 20,
+			defense: 10,
+			evasion: "0%"
+		},
 		criticalHit: {
 			chance: "5%",
 			damage: "2x",
@@ -333,12 +333,12 @@ module.exports = [
     class: "Spellcaster",
     subclass: "Cleric",
 		prerequisite: "Merchant Lv. 12",
-		stats: [
-			{ name: 'attack', amount: 25 },
-			{ name: 'health', amount: 20 },
-			{ name: 'defense', amount: 10 },
-			{ name: 'evasion', amount: "0%" },
-		],
+		stats: {
+			attack: 25,
+			health: 20,
+			defense: 10,
+			evasion: "0%"
+		},
 		criticalHit: {
 			chance: "5%",
 			damage: "2x",
@@ -363,12 +363,12 @@ module.exports = [
     class: "Spellcaster",
     subclass: "Druid",
 		prerequisite: "Merchant Lv. 22",
-		stats: [
-			{ name: 'attack', amount: 30 },
-			{ name: 'health', amount: 20 },
-			{ name: 'defense', amount: 12 },
-			{ name: 'evasion', amount: "0%" },
-		],
+		stats: {
+			attack: 30,
+			health: 20,
+			defense: 12,
+			evasion: "0%"
+		},
 		criticalHit: {
 			chance: "5%",
 			damage: "2x",
@@ -393,12 +393,12 @@ module.exports = [
     class: "Spellcaster",
     subclass: "Sorcerer",
 		prerequisite: "Merchant Lv. 32",
-		stats: [
-			{ name: 'attack', amount: 35 },
-			{ name: 'health', amount: 20 },
-			{ name: 'defense', amount: 12 },
-			{ name: 'evasion', amount: "0%" },
-		],
+		stats: {
+			attack: 35,
+			health: 20,
+			defense: 12,
+			evasion: "0%"
+		},
 		criticalHit: {
 			chance: "5%",
 			damage: "2x",
@@ -423,12 +423,12 @@ module.exports = [
     class: "Spellcaster",
     subclass: "Spellblade",
 		prerequisite: "Merchant Lv. 48",
-		stats: [
-			{ name: 'attack', amount: 40 },
-			{ name: 'health', amount: 23 },
-			{ name: 'defense', amount: 15 },
-			{ name: 'evasion', amount: "0%" },
-		],
+		stats: {
+			attack: 40,
+			health: 23,
+			defense: 15,
+			evasion: "0%"
+		},
 		criticalHit: {
 			chance: "5%",
 			damage: "2x",
