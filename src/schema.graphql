@@ -1,0 +1,160 @@
+type Query {
+	info: String!
+	blueprints: [Blueprint!]!
+	champions: [Champion!]!
+	heroes: [Hero!]!
+	workers: [Worker!]!
+}
+
+type Blueprint {
+    Name: String!
+    Type: String!
+    unlockPrerequisite: String!
+    "Research Scrolls": String!
+    Tier: Int!
+    Value: Int!
+    "Crafting Time (seconds)": Int!
+    "Crafting Time (formatted)": String!
+    # "Value / Crafting Time": 3.33,
+    "Merchant XP": Int!
+    "Worker XP": Int!
+    "Required Worker": String!
+    "Worker Level": Int!
+    "Required Worker__1": String!
+    "Worker Level__1": String!
+    iron: 5,
+    wood: "",
+    leather: "",
+    herbs: "",
+    steel: "",
+    ironwood: "",
+    fabric: "",
+    oil: "",
+    Component: "---",
+    "Component Quality": String!
+    "Amount Needed": String!
+    Component__1: "---",
+    "Component Quality__1": String!
+    "Amount Needed__1": String!
+    ATK: 16,
+    DEF: "",
+    HP: "",
+    "Crafting Upgrade 1": String!
+    "Crafts Needed": 7,
+    "Crafting Upgrade 2": String!
+    "Crafts Needed__1": 18,
+    "Crafting Upgrade 3": String!
+    "Crafts Needed__2": 32,
+    "Crafting Upgrade 4": String!
+    "Crafts Needed__3": 50,
+    "Crafting Upgrade 5": String!
+    "Crafts Needed__4": 80,
+    "Ascension Upgrade 1": String!
+    "Shards Needed": 5,
+    "Ascension Upgrade 2": String!
+    "Shards Needed__1": 5,
+    "Ascension Upgrade 3": String!
+    "Shards Needed__2": Int!
+    "Discount Energy": Int!
+    "Surcharge Energy": Int!
+    "Suggest Energy": Int!
+    "Speed Up Energy": Int!
+}
+
+type Champion {
+	name: String!
+	title: String!
+	prerequisite: String!
+	stats: [HeroStat!]!
+	skill: ChampionSkill
+	criticalHit: HeroCritical
+	unlockCost: ChampionCost
+	threatRating: Int!,
+	ranks: [ChampionRank!]!
+},
+
+type ChampionSkill {
+	name: String!
+	effect: String!
+}
+
+type ChampionCost {
+	coins: Int!
+}
+
+type ChampionReward {
+	health: Int!
+	attack: Int!
+	defense: Int!
+	skill: ChampionSkill
+}
+
+type ChampionRank {
+	rank: Int!
+	coins: Int!
+	reward: ChampionReward
+	title: String!
+	story: [ChampionStory!]!
+}
+
+type ChampionStory {
+	name: String!
+	text: String!
+}
+
+type Hero {
+	class: String!
+	subclass: String!
+	prerequisite: String!
+	stats: [HeroStat!]!
+	criticalHit: HeroCritical
+	cost: HeroCost
+	threatRating: Int!
+	equipments: [HeroEquipment!]!
+	element: String!
+	skillUnlockLevels: [Int!]!
+}
+
+type HeroStat {
+	name: String!
+	amount: Int | String!
+}
+
+type HeroCritical {
+	chance: String!
+	damage: String!
+}
+
+type HeroCost {
+	gold: Int!
+	gems: Int!
+}
+
+type HeroEquipment {
+	slot: Int!
+	allowed: [String!]!
+}
+
+type Worker {
+	name: String!
+  level_required: String!
+  gold_cost: String!
+  gem_cost: String!
+  title: String!
+	blueprint_unlocks: [String!]!
+	levels: [WorkerLevel!]!
+}
+
+type WorkerLevel {
+	level: Int!
+	time: String!
+	seconds: Int!
+	cost: String!
+	effect: String!
+	investments: WorkerInvestments
+}
+
+type WorkerInvestments {
+	gold: String!
+	gems: Int
+}
